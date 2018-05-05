@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper,final]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{anysize}
+\marginsize{2cm}{2cm}{2cm}{2cm}
+\author{Krzysztof Stasiowski}
+
+\def\arraystretch{1.2}%odstęp między wierszami
+
+
+\begin{document}
+Istnieje ścisły związek między rozkładem macierzy $A$ na macierze $L$ i $U$
+a metodą eliminacji Gaussa.
+Można wykazać,że elementy kolejnych kolumn macierzy $L$ są równe współczynnikom przez które mnożone są w kolejnych krokach wiersze układu równań celem dokonania eliminacji niewiadomych w odpowiednich kolumnach. Natomiast macierz $U$ jest równa macierzy trójkątnej uzyskanej w eliminacji Gaussa.
+\begin{equation*}
+[A|b]=
+\left[\begin{array}[c]{rrrr}
+2&2&4&4\\
+1&2&2&4\\
+1&4&1&1
+\end{array}\right]
+=
+\left[\begin{array}[c]{rrrr}
+2&2&4&4\\
+0&1&0&2\\
+0&3&-1&-1
+\end{array}\right]
+=
+\left[\begin{array}[c]{rrrr}
+2&2&4&4\\
+0&1&0&2\\
+0&0&-1&-7
+\end{array}\right]
+\end{equation*}
+\begin{equation*}
+L=
+\left[\begin{array}[c]{rrr}
+1&0&0\\
+\frac{1}{2}&1&0\\
+\frac{1}{2}&3&1
+\end{array}\right]
+%
+\qquad
+U=
+\left[\begin{array}[c]{rrrr}
+2&2&4&4\\
+0&1&0&2\\
+0&0&-1&-7
+\end{array}\right]
+\end{equation*}
+
+\end{document}

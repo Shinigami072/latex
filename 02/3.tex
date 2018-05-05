@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage[T1]{fontenc}
+\lstloadlanguages{C++}
+\author{Krzysztof Stasiowski}
+
+\definecolor{darkred}{rgb}{0.9,0,0}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{orange}{rgb}{1,0.6,0.05}
+\definecolor{darkgreen}{rgb}{0.2,0.5,0.05}
+
+\lstset{language=C++,
+literate={ą}{{\k{a}}}1
+           {ć}{{\'c}}1
+           {ę}{{\k{e}}}1
+           {ó}{{\'o}}1
+           {ń}{{\'n}}1
+           {ł}{{\l{}}}1
+           {ś}{{\'s}}1
+           {ź}{{\'z}}1
+           {ż}{{\.z}}1
+           {Ą}{{\k{A}}}1
+           {Ć}{{\'C}}1
+           {Ę}{{\k{E}}}1
+           {Ó}{{\'O}}1
+           {Ń}{{\'N}}1
+           {Ł}{{\L{}}}1
+           {Ś}{{\'S}}1
+           {Ź}{{\'Z}}1
+           {Ż}{{\.Z}}1,
+basicstyle=\ttfamily\small,
+keywordstyle=\color{darkgreen}\ttfamily\bfseries\small,
+stringstyle=\color{red}\ttfamily\small,
+commentstyle=\color{grey}\ttfamily\small,
+numbers=left,
+numberstyle=\color{darkred}\ttfamily\scriptsize,
+identifierstyle=\color{blue}\ttfamily\small,
+showstringspaces=false,
+morekeywords={
+}}
+
+\begin{document}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet egestas gravida. Nunc posuere, dui consectetur volutpat cursus, nisl nulla varius nisl, vitae ultrices tortor massa eu mauris. Phasellus velit quam, pretium ac magna quis, auctor euismod augue. Nam elit sem, malesuada eget neque at, ullamcorper vulputate ante. Sed nec ultricies dolor. Vivamus condimentum ut neque quis porttitor. Nunc blandit efficitur ex at sollicitudin. Nam laoreet sapien est, vel mattis est aliquet eget. Aliquam et pretium lacus.
+
+Nunc maximus, nisi nec auctor varius, neque velit lobortis orci, sit amet egestas nulla lectus nec lectus. Ut eget orci at magna congue porta. Ut quis sem augue. Nam laoreet ipsum in tortor suscipit pharetra. Sed ut maximus lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque dapibus luctus metus ut mollis. Aliquam dictum mattis augue, nec dignissim orci consectetur gravida.
+
+Vivamus sodales euismod purus, id facilisis sem ultricies eget. Fusce scelerisque diam vel enim viverra convallis. Integer sed sagittis purus. Phasellus eget varius metus, at rhoncus urna. Ut malesuada orci in varius feugiat. Nulla quis viverra nisl. In luctus urna quis tortor volutpat pulvinar. Sed lacinia pulvinar libero nec sodales. Curabitur eu neque id odio suscipit accumsan eget eu eros. Duis laoreet mollis nibh in rhoncus. Sed pellentesque, dolor vel maximus blandit, mi justo porta erat, at placerat diam eros sed ligula. Duis tempus urna a nisi convallis faucibus.
+
+
+\begin{lstlisting}[caption=tytuł2,label=lst:sil1,float=h,frame=single]
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int s, n, i;
+  cout << "Prosze podać liczbę naturalną n : ";
+  cin >> n;
+  i = 1;
+  s = 1;
+  
+  while (i < n)
+  {
+    i++;
+    s *= i;
+  }
+  cout << "Silnia: " << s << endl;
+}
+\end{lstlisting}
+
+\ref{lst:sil1}Nunc maximus, nisi nec auctor varius\ref{lst:sil2}, neque velit lobortis orci, sit amet egestas nulla lectus nec 
+Nunc pulvinar velit et nunc iaculis, sed gravida elit ornare. Etiam nec tellus quis lacus posuere commodo at non est. Mauris vel ultrices justo. Maecenas facilisis vitae nibh at pellentesque. Fusce pharetra ante dui, eget mattis ex tempus et. Aenean sit amet nisl at velit aliquam consectetur ac ac nunc. Duis vestibulum euismod mi sit amet sodales. Mauris et mi non purus dapibus finibus quis ut dui. Maecenas laoreet dolor urna, et sodales nunc porta id. Etiam imperdiet felis at diam iaculis, a commodo lectus pretium. Donec in tortor vehicula, rhoncus lectus sit amet, fringilla nunc. Cras eros lectus, consequat eu dolor venenatis, commodo feugiat sapien. Morbi vitae mauris sit amet tellus fringilla vehicula at a nibh.
+
+Pellentesque fringilla risus quis imperdiet maximus. Pellentesque posuere dui tortor, vitae dapibus elit dignissim et. Donec eleifend augue et rhoncus laoreet. Pellentesque aliquam sem eu massa convallis, sit amet mollis lorem congue. Etiam turpis tortor, porttitor at vulputate non, bibendum vitae massa. Sed tellus erat, euismod ac justo sit amet, ullamcorper laoreet orci. Maecenas faucibus egestas dignissim. Nulla facilisi. Duis sollicitudin viverra orci ac ultricies. In nec velit porta, interdum nulla pellentesque, iaculis lacus. Integer nibh velit, aliquam at pretium rutrum, imperdiet quis lectus. 
+
+\begin{lstlisting}[caption=tytuł1,label=lst:sil2,float=t,frame=single]
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int s, n, i;  
+  cout << "Podaj liczbę naturalną, n = ";
+  cin >> n;
+  s = 1;  
+  
+  for(i = 2; i <= n; i++) s *= i;  
+  
+  cout << "Silnia n: " << s << endl;
+}
+\end{lstlisting}
+
+\end{document}

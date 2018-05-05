@@ -1,0 +1,45 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{anysize}
+\usepackage{array}
+
+\begin{document}
+
+\subsubsection{The Model-Checking} 
+
+Process In applying model checking to a design the 
+following diferent phases can be distinguished: 
+\begin{itemize}
+\renewcommand{\labelitemii}{--}
+\item
+\emph{Modeling} phase:
+	\begin{itemize}
+	\item
+	model the system under consideration using the model description language of 
+	the model checker at hand; 
+	\item
+	as a first sanity check and quick assessment of the model perform some simulations;
+	\item
+	formalize the property to be checked using the property specification language. 
+	\end{itemize}
+\item
+\emph{Running} phase: run 
+the model checker to check the validity of the property in the system 
+model. 
+\item
+\emph{Analysis} phase:
+\begin{itemize}
+	\item property satisfied? $\rightarrow$ check next property (if any); 
+	\item property violated? $\rightarrow$
+	\begin{enumerate}
+	\item analyze generated counterexample by simulation; 
+	\item refine the model, design, or property; 
+	\item repeat the entire procedure. 
+	\end{enumerate}
+    \item out of memory? $\rightarrow$ try to reduce the model and try again.
+\end{itemize}
+\end{itemize}
+
+\end{document}

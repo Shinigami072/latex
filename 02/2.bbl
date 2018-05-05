@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{Alur:1990:AMR:90397.90438}
+R.~Alur and D.~L. Dill.
+\newblock Automata for modeling real-time systems.
+\newblock In {\em Proceedings of the Seventeenth International Colloquium on
+  Automata, Languages and Programming}, pages 322--335, New York, NY, USA,
+  1990. Springer-Verlag New York, Inc.
+
+\bibitem{Sommerville:2006:SE:1196763}
+I.~Sommerville.
+\newblock {\em Software Engineering: (Update) (8th Edition) (International
+  Computer Science)}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2006.
+
+\bibitem{etykietaMetody}
+T.~Szmuc, M.~Szpyrka, R.~Klimek, P.~Szwed, et~al.
+\newblock {\em Metody formalne w inżynierii oprogramowania systemów czasu
+  rzeczywistego}.
+
+\end{thebibliography}

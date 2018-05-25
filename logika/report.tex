@@ -1,0 +1,76 @@
+\documentclass{report-agh}
+\title{Zadanie domowe II}
+\author{Krzysztof Stasiowski\\Weronika Niedzwiedź\\Daniel Gut\\Michał Borkowski\\Przemysław Bielecki}
+\ASemester{2}
+\AYear{2017/2018}
+\Subject{Logika}
+%\let\nline\udefined
+\usepackage{fitch}
+\usepackage{enumitem}
+\usepackage{prooftrees}
+
+\begin{document}
+
+\maketitle
+
+\section{Cel Ćwiczenia}
+\begin{enumerate}[label=zad \arabic*.]
+\item
+Korzystając z metody tablic semantycznych sprawdzić czy następująca formuła jest formułą spełnialną lub tautologią: 
+$(( r \land  \lnot q) \land ( \lnot r \lor \lnot q)) \implies (\lnot q \implies (p \land r))$
+\item
+Za pomocą systemu Fitch udowodnić konkluzję $ (\lnot p \implies \lnot q)\implies p$\\
+Z przesłanki  $\lnot p \implies q$
+\end{enumerate}
+
+\newcommand{\BimplElim}{ $\beta$ E $\implies$}
+\newcommand{\BandElim}{ $\beta$ E $\lnot(\land)$}
+\newcommand{\BorElim}{ $\beta$ E $\lor$}
+\newcommand{\BiffElim}{ $\beta$ E $\lnot(\iff)$}
+
+\newcommand{\AnotElim}{ $\alpha$ E $\lnot\lnot$}
+\newcommand{\AimplElim}{ $\alpha$ E $\lnot(\implies)$}
+\newcommand{\AandElim}{ $\alpha$ E $\land$}
+\newcommand{\AorElim}{ $\alpha$ E $\lnot(\lor)$}
+\newcommand{\AiffElim}{ $\alpha$ E $\iff$}
+
+\section{zad 1. Tablice Semantyczne}
+\begin{prooftree}
+  {
+  	to prove=(( r \land  \lnot q) \land ( \lnot r \lor \lnot q)) \implies (\lnot q \implies (p \land r))
+    %close with={\ensuremath{\ast}}
+  }
+  [(( r \land  \lnot q) \land ( \lnot r \lor \lnot q)) \implies (\lnot q \implies (p \land r)
+	[\lnot (( r \land  \lnot q) \land ( \lnot r \lor \lnot q)), just={\BimplElim}
+		[\lnot(r \land \lnot q), just={\BandElim}
+			[\lnot r, just={\BandElim}]
+			[\lnot\lnot q, just={\BandElim}
+				[q, just={\AnotElim}]			
+			]
+		]
+		[\lnot(\lnot r \lor \lnot q), just={\BandElim}
+			[\lnot\lnot r.\lnot\lnot q), just={\AorElim}
+				[ r.q, just={\AnotElim}]
+			]
+		]
+  	]
+  	[\lnot q \implies (p \land r), just={\BimplElim}
+  		[\lnot\lnot q , just={\BimplElim}
+  			[q, just={\AnotElim}]
+  		]
+  		[	p \land r
+  			[p.r,just={\AandElim}]
+  		]
+  	]
+  ]
+\end{prooftree}
+
+\section{zad 2. Fitch}
+\begin{fitch}
+	\fj \lnot p \implies q 					&Przesłanka\\%1
+	\fa \fh \lnot p \implies \lnot q			&Założenie\\%2
+	\fa \fa \lnot p \implies q 				&Reiteracja(1)\\%3
+	\fa \fa p 								&Wprowadzenie $\lnot$(2,3)\\%4
+	(\lnot p \implies \lnot q )\implies p    &Wprowadzenie $\implies$ (4)%5
+\end{fitch}
+\end{document}
